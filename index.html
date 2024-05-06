@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissors Paper Stone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Scissors Paper Stone</h1>
+
+    <div class = "in">
+        <p>1. Scissors</p>
+        <p>2. Paper</p>
+        <p>3. Stone</p>
+        
+    </div>
+    <input type="text" placeholder="Type number 1/2/3" id="input">
+    <button onclick="playRound()">Enter</button>
+    <div class = "results">
+        <div class = "computer">
+            <p id = "computerchoice"></p>
+            <p id = "comp_score"></p>
+        </div>
+
+        <div class = "user">
+            <p id = "userchoice"></p>
+            <p id = "user_score"></p>
+        </div>
+       
+    </div>
+    <p id = "res"></p>
+    
+    <script src = "game.js"></script>
+</body>
+</html>
