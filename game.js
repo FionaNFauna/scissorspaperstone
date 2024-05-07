@@ -13,24 +13,10 @@ function getComputerChoice()    {
     }
 }
 
-function getHumanChoice()   {
-    let intput = document.getElementById("input");
-    var unum = parseInt(intput.value);
-    if  (unum === 1) {
-        return "scissors";
-    } else if   (unum === 2)  {
-        return "rock";
-    } else  if  (unum === 3) {
-        return "paper";
-    }
-    alert("please type in valid argument")
-    return null;
-}
-
-function playRound()    {
+function playRound(humanchoice)    {
     var resultbool = null;
     const cnum = getComputerChoice();
-    const unum = getHumanChoice();
+    const unum = humanchoice;
     if  (unum == null)  {
         return;
     }
@@ -70,17 +56,17 @@ function playRound()    {
         document.getElementById("res").textContent = "You lost."
     }
 
-    document.getElementById("comp_score").textContent = computerScore;
-    document.getElementById("user_score").textContent = humanScore;
+    document.getElementById("comp_score").textContent = `Computer Score: ${computerScore}`;
+    document.getElementById("user_score").textContent = `Your Score: ${humanScore}`;
 
-    if  (rounds >= 5)   {
-        var str = "\nIn these 5 rounds, ";
+    if  (computerScore >= 5 || humanScore >= 5)   {
+        var str = " ";
         if  (computerScore > humanScore)    {
-            str += `you lost ${computerScore}-${humanScore}.`
+            str += `You lost ${computerScore}-${humanScore}.`
         } else if   (computerScore < humanScore)    {
-            str += `you won ${humanScore}-${computerScore}.`
+            str += `You won ${humanScore}-${computerScore}.`
         } else  {
-            str += `you tied with the computer.`
+            str += `You tied with the computer.`
         }
         document.getElementById("res").textContent += str;
 
